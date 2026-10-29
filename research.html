@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Research · Sahil Shah</title>
+<meta name="description" content="Research interests and projects of Sahil Shah: anyonic quantum critical transport, graphene quantum Hall Josephson junctions and magnetic topological insulators.">
+<meta property="og:title" content="Research · Sahil Shah">
+<meta property="og:description" content="Research interests and projects of Sahil Shah: anyonic quantum critical transport, graphene quantum Hall Josephson junctions and magnetic topological insulators.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  // apply a saved theme before first paint
+  try { var t = localStorage.getItem('theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+</head>
+<body class="research-page">
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="column">
+    <div class="masthead-inner">
+      <div class="menu">
+        <button type="button" class="menu-button" id="menu-button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu" title="Menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="stairs" d="M2.5 19.5h4.5v-5h5V10h4.5V5.5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <nav class="menu-panel" id="site-menu" aria-label="Pages" hidden>
+          <p class="menu-head">Sahil Shah · pages</p>
+          <ul class="menu-list">
+          <li style="--i:0"><a href="./"><span class="menu-label">About</span><span class="menu-desc">Who I am and what I'm up to</span></a></li>
+          <li style="--i:1" class="is-current"><a href="research.html" aria-current="page"><span class="menu-label">Research</span><span class="menu-desc">Interests, projects and the people I work with</span></a></li>
+          <li style="--i:2"><a href="demos.html"><span class="menu-label">Demos &amp; visualizations</span><span class="menu-desc">The quantum Hall effect, in your browser</span></a></li>
+          <li style="--i:3"><a href="gallery.html"><span class="menu-label">Gallery</span><span class="menu-desc">Postcards from the cleanroom</span></a></li>
+          <li style="--i:4"><a href="notes.html"><span class="menu-label">Notes <span class="badge">under construction</span></span><span class="menu-desc">Anyons, large-N and more, soon</span></a></li>
+          </ul>
+          <div class="menu-foot"><a href="./#contact">Contact</a><small>© 2026</small></div>
+        </nav>
+      </div>
+      <p class="masthead-title"><a href="./">Sahil Shah</a><span class="masthead-tagline">Condensed matter physics</span></p>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch colour theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9A7 7 0 0 1 12 3z" fill="currentColor"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="column">
+  <h1 class="page-title">Research</h1>
+  <p class="lead">I’m broadly interested in condensed matter theory.</p>
+
+  <h2>Current interests</h2>
+  <ul class="interests">
+    <li><strong>Topological order and the fractional quantum Hall effect.</strong> Anyons, field-theory descriptions of fractional quantum Hall states, and the dualities that let different-looking theories describe the same physics.</li>
+    <li><strong>Quantum critical points between topological phases.</strong> Transitions from quantum Hall states to insulators, and the conformal field theories that describe them.</li>
+    <li><strong>Detecting topological order.</strong> All the ways experiments can see it, from transport to mesoscopic probes such as interferometry and noise measurements that get at the fractional statistics of anyons.</li>
+    <li><strong>Superconductivity meets topology.</strong> Superconductors coupled to quantum Hall edges, and topological and nonequilibrium superconductivity, especially in graphene and moiré materials, where these ingredients can be tuned with a gate.</li>
+  </ul>
+  <p>I’m interested in probing these questions with quantum field theory techniques, and I’m eager to learn numerics.</p>
+
+  <h2>Projects</h2>
+
+  <article class="project">
+    <h3>Anyonic quantum critical points</h3>
+    <p class="project-meta">With Prashant Kumar, IIT Bombay · 2025 to now <span class="tag">theory</span></p>
+    <p>Quantum critical points of anyon gases, such as the transition between a fractional quantum Hall state and an insulator, studied with large-<i>N</i> Chern–Simons–matter theories. A paper with Michael Mulligan and Prashant Kumar is in preparation.</p>
+  </article>
+
+  <article class="project">
+    <h3>A tunable quantum Hall Josephson junction in graphene</h3>
+    <p class="project-meta">Institut Néel, CNRS Grenoble · MS thesis with <a href="https://sacepe-quest.neel.cnrs.fr/" rel="noopener">Benjamin Sacépé</a> · 2024–25 <span class="tag">experiment</span></p>
+      <figure class="project-figure">
+        <button type="button" class="postcard-photo" data-full="assets/gallery/graphene-jj-958.webp" data-title="Josephson junctions with embedded QPCs" data-meta="Grenoble · 2025 · SEM, 3 kV, 9.5k×" aria-label="Enlarge: Josephson junctions with embedded QPCs">
+          <img src="assets/gallery/graphene-jj-800.webp" srcset="assets/gallery/graphene-jj-800.webp 800w, assets/gallery/graphene-jj-958.webp 958w" sizes="216px" width="800" height="571" loading="lazy" decoding="async" alt="Scanning electron micrograph of a row of Josephson junctions along a graphene nanoribbon, with many narrow gate and contact leads fanning out to both sides. 1 µm scale bar.">
+          <span class="loupe" aria-hidden="true"></span>
+        </button>
+        <figcaption>Junctions along a graphene nanoribbon, 1 µm scale bar. <a href="gallery.html">More in the gallery</a></figcaption>
+      </figure>
+    <p>In a quantum Hall Josephson junction the supercurrent is carried by chiral edge states, here at <i>ν</i> = 1 and 2. I fabricated ultra-narrow junctions on encapsulated graphene nanoribbons with split gates inside them, which tune the junction’s Andreev bound-state spectrum and so make a tunable topological Josephson junction.</p>
+    <p class="project-links"><a href="https://drive.google.com/drive/folders/1rHs1zJDTiClQU3ZW5CVv6127AGPELgry?usp=sharing" rel="noopener">Thesis materials</a></p>
+  </article>
+
+  <article class="project">
+    <h3>Josephson junctions on magnetic topological insulators</h3>
+    <p class="project-meta">Universität Würzburg · <a href="https://www.physik.uni-wuerzburg.de/topological-insulators/home/" rel="noopener">Laurens Molenkamp’s group</a>, supervised by Charles Gould · 2023 <span class="tag">experiment</span></p>
+      <figure class="project-figure">
+        <button type="button" class="postcard-photo" data-full="assets/gallery/hgte-sns-2200.webp" data-title="SNS junctions with a hafnium-oxide gate" data-meta="Würzburg · 2023 · optical, sample qc700sc2" aria-label="Enlarge: SNS junctions with a hafnium-oxide gate">
+          <img src="assets/gallery/hgte-sns-800.webp" srcset="assets/gallery/hgte-sns-800.webp 800w, assets/gallery/hgte-sns-1400.webp 1400w" sizes="216px" width="800" height="571" loading="lazy" decoding="async" alt="Optical micrograph of a gated HgTe quantum-well device: gold contact leads and gate electrodes converge on a central mesa. Sample qc700sc2, 20 µm scale bar.">
+          <span class="loupe" aria-hidden="true"></span>
+        </button>
+        <figcaption>A gated SNS device on a Mn-doped HgTe quantum well, 20 µm scale bar. <a href="gallery.html">More in the gallery</a></figcaption>
+      </figure>
+    <p>I fabricated gate-tunable 2D topological Josephson junctions (SNS) and SNN devices on magnetically doped (Hg,Mn)Te/(Hg,Cd)Te quantum wells, then measured them at 1.5 K: Shubnikov–de Haas oscillations gave the carrier density and gating efficiency, and a Landau fan chart gave the gap voltage.</p>
+    <p class="project-links"><a href="https://drive.google.com/drive/folders/1Z-bIwTneh0FJFmST9PGwErQLuqHvuqO6?usp=drive_link" rel="noopener">Project materials</a></p>
+  </article>
+
+  <article class="project">
+    <h3>Electronics for qubit control</h3>
+    <p class="project-meta">IIT Bombay · with <a href="https://sites.google.com/view/qsilab" rel="noopener">Suddhasatta Mahapatra</a> · 2022 <span class="tag">instrumentation</span></p>
+    <p>Python drivers in QCoDeS for an RF instrument stack that delivers pulses for single-qubit control, and QCoDeS-controlled Hall-bar measurements.</p>
+    <p class="project-links"><a href="https://www.dropbox.com/s/eh5onvvbz55za3u/Summer_Project_Report.pdf?dl=0" rel="noopener">Project report</a></p>
+  </article>
+
+  <h2>Smaller projects</h2>
+  <ul class="minor">
+    <li><span class="when">2024</span><span><strong>Topological phases with Kwant.</strong> The Kitaev chain, Hofstadter’s butterfly and the integer quantum Hall effect on a lattice. Course project, IISER Mohali.</span></li>
+    <li><span class="when">2024</span><span><strong>Chaos in the kicked rotor.</strong> Counting chaotic orbits to locate the transition to chaos at <i>K</i><sub>c</sub> ≈ 0.97. Course project, IISER Mohali.</span></li>
+    <li><span class="when">2021–22</span><span><strong>Quantum computing with Qiskit.</strong> IBM Qiskit Global Summer Schools and Quantum Challenges.</span></li>
+  </ul>
+
+  <p class="aside">This is a short version. For my full CV, <a href="./#contact">email me</a>.</p>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="column">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Pages (footer)"><a href="./">About</a><a href="research.html" aria-current="page">Research</a><a href="demos.html">Demos</a><a href="gallery.html">Gallery</a><a href="notes.html">Notes</a></nav>
+      <!-- Visitor counter: paste your Cloudflare Worker URL into ENDPOINT at the top of assets/js/visits.js (see README). Hidden until then. -->
+      <div class="visits" id="visits" data-flags="assets/flags/" hidden>
+        <p class="visits-summary"><span class="visits-label">Visitors</span> <span><strong id="visits-total">0</strong> visits from <strong id="visits-n">0 countries</strong></span></p>
+        <ul class="visits-flags" id="visits-flags" aria-label="Visits by country"></ul>
+        <button type="button" class="visits-more" id="visits-more" hidden>+0 more</button>
+        <p class="visits-note" id="visits-note" hidden>Example data. Live counts appear once the counter is deployed.</p>
+      </div>
+      <div class="footer-meta">
+        <p>© <span id="year">2026</span> Sahil Shah</p>
+        <p class="footnote">All plateaus on this site are quantized to within 0.4%.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-title">
+  <figure>
+    <img id="lightbox-img" src="data:," alt="">
+    <figcaption><span id="lightbox-title"></span> <span class="lightbox-meta" id="lightbox-meta"></span></figcaption>
+  </figure>
+  <button type="button" class="lb-btn lb-close" id="lb-close" aria-label="Close">×</button>
+  <button type="button" class="lb-btn lb-prev" id="lb-prev" aria-label="Previous photo">‹</button>
+  <button type="button" class="lb-btn lb-next" id="lb-next" aria-label="Next photo">›</button>
+</dialog>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/gallery.js" defer></script>
+<script src="assets/js/visits.js" defer></script>
+</body>
+</html>

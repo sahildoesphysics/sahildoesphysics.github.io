@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Notes · Sahil Shah</title>
+<meta name="description" content="Notes by Sahil Shah, under construction.">
+<meta property="og:title" content="Notes · Sahil Shah">
+<meta property="og:description" content="Notes by Sahil Shah, under construction.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  // apply a saved theme before first paint
+  try { var t = localStorage.getItem('theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+</head>
+<body class="notes-page">
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="column">
+    <div class="masthead-inner">
+      <div class="menu">
+        <button type="button" class="menu-button" id="menu-button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu" title="Menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="stairs" d="M2.5 19.5h4.5v-5h5V10h4.5V5.5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <nav class="menu-panel" id="site-menu" aria-label="Pages" hidden>
+          <p class="menu-head">Sahil Shah · pages</p>
+          <ul class="menu-list">
+          <li style="--i:0"><a href="./"><span class="menu-label">About</span><span class="menu-desc">Who I am and what I'm up to</span></a></li>
+          <li style="--i:1"><a href="research.html"><span class="menu-label">Research</span><span class="menu-desc">Interests, projects and the people I work with</span></a></li>
+          <li style="--i:2"><a href="demos.html"><span class="menu-label">Demos &amp; visualizations</span><span class="menu-desc">The quantum Hall effect, in your browser</span></a></li>
+          <li style="--i:3"><a href="gallery.html"><span class="menu-label">Gallery</span><span class="menu-desc">Postcards from the cleanroom</span></a></li>
+          <li style="--i:4" class="is-current"><a href="notes.html" aria-current="page"><span class="menu-label">Notes <span class="badge">under construction</span></span><span class="menu-desc">Anyons, large-N and more, soon</span></a></li>
+          </ul>
+          <div class="menu-foot"><a href="./#contact">Contact</a><small>© 2026</small></div>
+        </nav>
+      </div>
+      <p class="masthead-title"><a href="./">Sahil Shah</a><span class="masthead-tagline">Condensed matter physics</span></p>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch colour theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9A7 7 0 0 1 12 3z" fill="currentColor"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="column">
+  <h1 class="page-title">Notes</h1>
+  <p class="lead">Under construction. This page is sitting on a plateau for now.</p>
+  <figure class="construction" aria-label="A Hall resistance staircase drawn as a map of this site: plateaus for about, research, demos and gallery, then a dashed plateau labelled notes with a construction barrier on it.">
+    <svg viewBox="0 0 560 230" role="img" aria-hidden="true" focusable="false">
+      <defs>
+        <pattern id="hazard" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect class="hz-a" width="12" height="12"/><rect class="hz-b" width="6" height="12"/>
+        </pattern>
+      </defs>
+      <path class="axis" d="M40 14V200H540"/>
+      <text class="ax-label" x="536" y="220" text-anchor="end">B</text>
+      <text class="ax-label" x="10" y="26">R<tspan font-size="10" dy="4">xy</tspan></text>
+      <path class="stairs-done" d="M40 200L80 184H128V156H196V126H262V96H330"/>
+      <path class="stairs-todo" d="M330 96V62H520"/>
+      <text class="plateau-label" x="104" y="176" text-anchor="middle">about</text>
+      <text class="plateau-label" x="162" y="148" text-anchor="middle">research</text>
+      <text class="plateau-label" x="229" y="118" text-anchor="middle">demos</text>
+      <text class="plateau-label" x="296" y="88" text-anchor="middle">gallery</text>
+      <text class="plateau-label" x="368" y="54" text-anchor="middle">notes</text>
+      <line class="barrier-leg" x1="432" y1="46" x2="424" y2="62"/>
+      <line class="barrier-leg" x1="492" y1="46" x2="500" y2="62"/>
+      <rect class="board" x="412" y="32" width="100" height="14" rx="2" fill="url(#hazard)"/>
+      <circle class="lamp" cx="420" cy="26" r="4.5"/>
+    </svg>
+  </figure>
+  <p>I’m writing up notes on things I’ve worked through, and they’ll appear here as they’re finished. Planned so far:</p>
+  <ul class="topics">
+    <li>Different views on anyons</li>
+    <li>Large-<i>N</i> expansions</li>
+    <li>Simplified calculations for experimentalists</li>
+  </ul>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="column">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Pages (footer)"><a href="./">About</a><a href="research.html">Research</a><a href="demos.html">Demos</a><a href="gallery.html">Gallery</a><a href="notes.html" aria-current="page">Notes</a></nav>
+      <!-- Visitor counter: paste your Cloudflare Worker URL into ENDPOINT at the top of assets/js/visits.js (see README). Hidden until then. -->
+      <div class="visits" id="visits" data-flags="assets/flags/" hidden>
+        <p class="visits-summary"><span class="visits-label">Visitors</span> <span><strong id="visits-total">0</strong> visits from <strong id="visits-n">0 countries</strong></span></p>
+        <ul class="visits-flags" id="visits-flags" aria-label="Visits by country"></ul>
+        <button type="button" class="visits-more" id="visits-more" hidden>+0 more</button>
+        <p class="visits-note" id="visits-note" hidden>Example data. Live counts appear once the counter is deployed.</p>
+      </div>
+      <div class="footer-meta">
+        <p>© <span id="year">2026</span> Sahil Shah</p>
+        <p class="footnote">All plateaus on this site are quantized to within 0.4%.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/visits.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Demos · Sahil Shah</title>
+<meta name="description" content="An interactive simulation of the integer and fractional quantum Hall effects: Landau levels, percolation, composite fermions and the Hall insulator.">
+<meta property="og:title" content="Demos · Sahil Shah">
+<meta property="og:description" content="An interactive simulation of the integer and fractional quantum Hall effects: Landau levels, percolation, composite fermions and the Hall insulator.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/qhe.css">
+<script>
+  // apply a saved theme before first paint
+  try { var t = localStorage.getItem('theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+</head>
+<body class="demos-page">
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="column">
+    <div class="masthead-inner">
+      <div class="menu">
+        <button type="button" class="menu-button" id="menu-button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu" title="Menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="stairs" d="M2.5 19.5h4.5v-5h5V10h4.5V5.5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <nav class="menu-panel" id="site-menu" aria-label="Pages" hidden>
+          <p class="menu-head">Sahil Shah · pages</p>
+          <ul class="menu-list">
+          <li style="--i:0"><a href="./"><span class="menu-label">About</span><span class="menu-desc">Who I am and what I'm up to</span></a></li>
+          <li style="--i:1"><a href="research.html"><span class="menu-label">Research</span><span class="menu-desc">Interests, projects and the people I work with</span></a></li>
+          <li style="--i:2" class="is-current"><a href="demos.html" aria-current="page"><span class="menu-label">Demos &amp; visualizations</span><span class="menu-desc">The quantum Hall effect, in your browser</span></a></li>
+          <li style="--i:3"><a href="gallery.html"><span class="menu-label">Gallery</span><span class="menu-desc">Postcards from the cleanroom</span></a></li>
+          <li style="--i:4"><a href="notes.html"><span class="menu-label">Notes <span class="badge">under construction</span></span><span class="menu-desc">Anyons, large-N and more, soon</span></a></li>
+          </ul>
+          <div class="menu-foot"><a href="./#contact">Contact</a><small>© 2026</small></div>
+        </nav>
+      </div>
+      <p class="masthead-title"><a href="./">Sahil Shah</a><span class="masthead-tagline">Condensed matter physics</span></p>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch colour theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9A7 7 0 0 1 12 3z" fill="currentColor"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="column">
+  <h1 class="page-title">Demos &amp; visualizations</h1>
+  <p class="lead">Simulations I’ve written to watch physics happen. They run in your browser, and nothing is precomputed.</p>
+</div>
+
+<section class="demo" id="qhe" aria-labelledby="qhe-h">
+  <div class="column">
+    <h2 id="qhe-h">The quantum Hall effect, from plateaus to fractions</h2>
+    <p>A two-dimensional electron gas in a strong magnetic field splits into Landau levels. Disorder broadens each level: states in its tails are trapped on closed equipotentials and are <em>localized</em>, and only a narrow band near its centre is <em>extended</em> across the sample. Change the field and follow the Fermi level through the density of states, the electron gas and the measured resistance at the same time.</p>
+    <p>Switch on interactions and the electrons in a partly filled level bind flux quanta into composite fermions, which open the fractional plateaus. At the highest fields the last plateau gives way to a Hall insulator.</p>
+  </div>
+  <div class="column-wide">
+      <div class="sim" id="qhe-sim">
+        <div class="sim-controls">
+          <div class="ctl">
+            <label for="qhe-b"><span>Magnetic field</span> <output id="qhe-b-out" for="qhe-b">2.35 T</output></label>
+            <input type="range" id="qhe-b" min="0.5" max="14" step="0.01" value="2.35">
+          </div>
+          <div class="ctl">
+            <label for="qhe-g"><span>Disorder broadening <i>Γ</i></span> <output id="qhe-g-out" for="qhe-g">0.50 meV</output></label>
+            <input type="range" id="qhe-g" min="0.2" max="1.5" step="0.05" value="0.5">
+          </div>
+          <div class="ctl-buttons">
+            <button type="button" class="btn btn-primary" id="qhe-sweep" aria-pressed="false">Sweep B</button>
+            <button type="button" class="btn" id="qhe-reseed">New disorder</button>
+          </div>
+          <div class="ctl-switch">
+            <button type="button" class="switch" id="qhe-int" role="switch" aria-checked="false" aria-describedby="qhe-int-hint"><span class="switch-knob"></span></button>
+            <label for="qhe-int">Electron interactions</label>
+            <span class="ctl-hint" id="qhe-int-hint">Off: independent electrons, up to 14 T. On: composite fermions and fractional plateaus, up to 24 T.</span>
+          </div>
+        </div>
+
+        <dl class="sim-readout">
+          <div><dt>Filling <i>ν</i> = <i>nh</i>/<i>eB</i></dt><dd id="ro-nu">–</dd></div>
+          <div><dt>ħω<sub>c</sub></dt><dd id="ro-hw">–</dd></div>
+          <div><dt>E<sub>F</sub></dt><dd id="ro-ef">–</dd></div>
+          <div><dt>R<sub>xy</sub></dt><dd id="ro-rxy">–</dd></div>
+          <div><dt>R<sub>xx</sub></dt><dd id="ro-rxx">–</dd></div>
+        </dl>
+
+        <div class="sim-grid">
+          <figure class="sim-panel">
+            <figcaption><span class="panel-title">Density of states</span><span class="panel-note" id="qhe-dos-note">each level holds eB/h states per area</span></figcaption>
+            <canvas id="qhe-dos" class="cv-dos" role="img" aria-label="Density of states of the broadened Landau levels, with occupied states shaded up to the Fermi level"></canvas>
+            <ul class="legend">
+              <li><span class="sw sw-occ"></span>occupied</li>
+              <li><span class="sw sw-empty"></span>empty</li>
+              <li><span class="sw sw-ext"></span>extended states</li>
+              <li><span class="sw sw-line"></span>Fermi level</li>
+            </ul>
+          </figure>
+          <figure class="sim-panel">
+            <figcaption><span class="panel-title">Disordered Hall bar</span><span class="panel-note">states at E<sub>F</sub> · <i>B</i> out of the page</span></figcaption>
+            <canvas id="qhe-2deg" class="cv-gas" role="img" aria-label="Hall bar with a random potential, showing edge channels, localized orbits and percolating extended states at the Fermi energy"></canvas>
+            <ul class="legend">
+              <li><span class="sw sw-edge"></span>edge channel</li>
+              <li><span class="sw sw-loc"></span>localized</li>
+              <li><span class="sw sw-ext"></span>extended</li>
+              <li><span class="sw sw-fill"></span>local filling</li>
+              <li id="qhe-legend-cf" hidden><span class="sw sw-dash"></span>composite fermions</li>
+            </ul>
+          </figure>
+        </div>
+
+        <p class="sim-status" id="qhe-status" aria-live="polite"></p>
+
+        <figure class="sim-panel sim-panel-wide">
+          <figcaption><span class="panel-title">Magnetotransport</span><span class="panel-note">drag on the plot to set <i>B</i></span></figcaption>
+          <canvas id="qhe-rb" class="cv-rb" role="img" aria-label="Hall resistance and longitudinal resistance against magnetic field, with a marker at the current field"></canvas>
+        </figure>
+      </div>
+  </div>
+  <div class="column">
+      <details class="model-notes">
+        <summary>About the model</summary>
+        <div>
+          <p>The sample is a GaAs 2DEG (<i>m</i>* = 0.067 <i>m</i><sub>e</sub>) with a fixed density of 1.0 × 10<sup>11</sup> cm<sup>−2</sup>, so <i>ν</i> = 1 falls at 4.1 T and <i>ν</i> = 1/3 at 12.4 T. Levels are taken as spin-resolved, <i>E</i><sub><i>n</i></sub> = (<i>n</i> + ½)ħω<sub>c</sub>, each broadened by a smooth random potential with rms amplitude Γ. The Fermi level is found by filling states until the density is reached.</p>
+          <p>In a strong field the guiding centre of a cyclotron orbit drifts along equipotentials of the disorder, so a state of energy <i>E</i> in level <i>n</i> lives on the contour <i>V</i>(<b>r</b>) = <i>E</i> − <i>E</i><sub><i>n</i></sub>. The Hall bar draws those contours at the Fermi energy with marching squares, and the dots move with the <b>E</b> × <b>B</b> drift. Small closed contours are localized. Contours that link the two edges, or that are larger than an assumed phase-coherence length of 0.7 bar widths, count as extended and let electrons backscatter. The confining potential at the edges carries one chiral channel per filled level. The shading shows the local filling factor.</p>
+          <p>The range of energies with extended states is measured on this simulated sample, and the same range sets where σ<sub>xy</sub> steps by e²/h. Each step follows the semicircle law σ<sub>xx</sub>² + (σ<sub>xy</sub> − <i>N</i> − ½)² = ¼. Past the last plateau σ<sub>xy</sub> and σ<sub>xx</sub> both vanish on the semicircle, so ρ<sub>xx</sub> diverges while ρ<sub>xy</sub> stays at h/e²: the quantized Hall insulator. When levels overlap (ħω<sub>c</sub> ≲ 3Γ) the transport crosses over to the Drude form with Shubnikov–de Haas oscillations.</p>
+          <p>With interactions on, the electrons in the partly filled level <i>N</i> (filling <i>f</i>) are treated in mean-field composite-fermion theory. Each binds two flux quanta, so they see <i>B</i>* = <i>B</i>(1 − 2<i>f</i>) and fill |<i>ν</i>*| = <i>f</i>/|1 − 2<i>f</i>| Λ levels. Those levels are spaced by a Coulomb gap Δ = 0.33 (e²/εℓ<sub>B</sub>)|1 − 2<i>f</i>|, reduced by 1/(1 + <i>N</i>²) in higher levels, and are broadened by a quarter of the electron disorder. The composite fermions go through the same percolation and semicircle machinery. The electron resistivity is the composite-fermion one plus the Chern–Simons term, ρ<sub>xy</sub> = ρ*<sub>xy</sub> + 2h/e², which turns <i>ν</i>* = ±<i>p</i> into the plateaus <i>ν</i> = <i>p</i>/(2<i>p</i> ± 1). The dashed contours are the composite-fermion states at their Fermi energy. For <i>f</i> &gt; ½, <i>B</i>* is reversed and so is their drift. Near <i>f</i> = ½ the Λ levels merge into a composite-fermion Fermi sea. Past 1/3, the composite fermions localize and the sample again becomes a Hall insulator with ρ<sub>xy</sub> ≈ 3h/e².</p>
+          <p>It is a teaching model. It captures the percolation and composite-fermion pictures, but not critical exponents, spin, or fractions outside the Jain sequences, such as 5/2.</p>
+        </div>
+      </details>
+  </div>
+</section>
+
+<div class="column">
+  <p class="aside">More demos are on the way.</p>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="column">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Pages (footer)"><a href="./">About</a><a href="research.html">Research</a><a href="demos.html" aria-current="page">Demos</a><a href="gallery.html">Gallery</a><a href="notes.html">Notes</a></nav>
+      <!-- Visitor counter: paste your Cloudflare Worker URL into ENDPOINT at the top of assets/js/visits.js (see README). Hidden until then. -->
+      <div class="visits" id="visits" data-flags="assets/flags/" hidden>
+        <p class="visits-summary"><span class="visits-label">Visitors</span> <span><strong id="visits-total">0</strong> visits from <strong id="visits-n">0 countries</strong></span></p>
+        <ul class="visits-flags" id="visits-flags" aria-label="Visits by country"></ul>
+        <button type="button" class="visits-more" id="visits-more" hidden>+0 more</button>
+        <p class="visits-note" id="visits-note" hidden>Example data. Live counts appear once the counter is deployed.</p>
+      </div>
+      <div class="footer-meta">
+        <p>© <span id="year">2026</span> Sahil Shah</p>
+        <p class="footnote">All plateaus on this site are quantized to within 0.4%.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/qhe.js" defer></script>
+<script src="assets/js/visits.js" defer></script>
+</body>
+</html>
