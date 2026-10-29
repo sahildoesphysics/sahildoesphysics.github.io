@@ -5,7 +5,7 @@
  * Each browser session counts once, whichever pages it opens; visits from localhost are never counted.
  */
 // Your counter's address, e.g. 'https://site-visit-counter.yourname.workers.dev'
-const ENDPOINT = '';
+const ENDPOINT = 'https://site-visit-counter.sahilshah1510.workers.dev';
 
 (() => {
   'use strict';
